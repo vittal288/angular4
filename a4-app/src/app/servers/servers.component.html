@@ -1,0 +1,26 @@
+<!--<app-server></app-server>
+<app-server></app-server>
+<warning-success-alert></warning-success-alert>
+<warning-success-alert></warning-success-alert>
+<app-failure-warining-alert></app-failure-warining-alert>-->
+
+<label for="name">Server Name:</label>
+
+<!--<input type="text" name="serverName"  class="form-control"
+       (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p>-->
+
+<!-- TWO WAY DATA BINDING -->
+<input type="text" class="form-control"
+    [(ngModel)]="serverName">
+<button type="button" class="btn btn-sm btn-info" 
+        (click)="onServerCreate()" 
+        [disabled]="!allowUserClick">Add Server</button>
+<!--<p>{{serverCreationStatus}}</p>-->
+<p *ngIf="serverCreated; else noServer">Server is created with server name {{serverName}}</p>
+<ng-template #noServer>
+    <p>No Server was created !</p>
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+
+

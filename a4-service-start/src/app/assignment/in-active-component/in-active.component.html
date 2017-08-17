@@ -1,0 +1,4 @@
+<div class="well"  *ngFor="let inActiveUser of users">
+    <span>{{inActiveUser}} | </span>
+    <a (click)="onUpdateUserToActive(inActiveUser)">Set to Active</a>
+</div>

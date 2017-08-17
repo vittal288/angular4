@@ -1,0 +1,12 @@
+.container {
+  margin-top: 30px;
+}
+.odd{
+  background-color: #ff0000
+}
+.even{
+  background-color: #00ff00
+}
+.some-directive-cls{
+  border:2px solid #000;
+}

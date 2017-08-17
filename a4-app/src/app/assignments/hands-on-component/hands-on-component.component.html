@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <span>Assignmnt One</span>
+    <div class="col-sm-12">
+      <label for="input-id">UserName:</label>
+      <input type="text" class="form-control" [(ngModel)]="username">
+      <p>{{username}}</p>
+
+      <button type="button" class="btn btn-info" (click)=" username='' " [disabled]="username === ''">Reset User</button>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <span>Assignmnt Two</span>
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-default" (click)="onLogBtnEvents()">Display Details</button>
+      <div>
+        <p *ngIf="toggleFlg">Some Random Text</p>
+      </div>        
+      <p *ngFor="let cnt of arrLogAllBtnEvents" [ngStyle]="{backgroundColor : cnt >= 5 ?'blue':'transparent' }" [ngClass]="{txtCls : cnt>=5}">{{cnt}}</p>      
+    </div>
+  </div>
+</div>

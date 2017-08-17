@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+            <li class="list-group-item" 
+                *ngFor="let number of oddNumbers" 
+                [ngClass]="{odd: number % 2 !==0}"
+                [ngStyle]="{color: number % 2 !==0 ? 'white':'red'}">
+              {{number}}
+            </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+            <li class="list-group-item" *ngFor="let number of evenNumbers" [ngClass]="{even:number % 2 ===0}">
+              {{number}}
+            </li>
+        </div> 
+
+        <!-- way of using the NGIF in different way, instead of using structural we can use like property binding -->               
+        <ng-template [ngIf]="!onlyOdd">         
+          <li class="list-group-item" *ngFor="let number of evenNumbers" [ngClass]="{even:number % 2 ===0}">
+              {{number}}
+          </li>
+        </ng-template>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+        <p>Only odd</p>
+      </ng-template>
+      <p appBasicHighLight>Style me with basic directive </p>
+      <!--<p [appBetterHighlight]="'yellow'" [highLightColor]="'pink'">Style me with better directive </p>-->
+      <p [appBetterHighlight]="'yellow'" highLightColor="pink">Style me with better directive </p>
+      
+      <h3>Structural Directive</h3>
+      <div *appUnless="smpleFlg">I am FALSE</div>   
+
+      <h2>NG SWITCH</h2>   
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">Value is 5</p>
+        <p *ngSwitchCase="10">Value is 10</p>
+        <p *ngSwitchCase="100">Value is 100</p>
+        <p *ngSwitchDefault>I am default Value </p>
+      </div>
+
+    </div>
+  </div>
+</div>

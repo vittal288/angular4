@@ -1,0 +1,13 @@
+<div class="container" style="margin-top:50px">
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game (eventNumber)="onGameStarted($event)"></app-game>
+    </div>
+  </div>
+  <div class="row">
+    <app-even *ngFor="let evenNo of eventEmitNo" [emitNumber]="evenNo"></app-even>
+  </div>
+  <div class="row">
+    <app-odd *ngFor="let oddNo of oddEventNo" [emitNumber]="oddNo"></app-odd>
+  </div>
+</div>

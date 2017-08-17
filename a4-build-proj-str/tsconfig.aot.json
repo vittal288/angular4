@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "es2015", //remove unwanted JS codes
+        "outDir": "./dist",
+        "moduleResolution": "node", //typescript analyse our modules and import statements
+        "emitDecoratorMetadata": true, //because we are using metadata in our set up
+        "experimentalDecorators": true, //because we are using metadata in our set up
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [ //tell typescript , which library will use 
+            "es5",
+            "dom"
+        ]
+    },
+    "angularCompilerOptions": {
+        "skipMetadataEmit": true
+    }
+}

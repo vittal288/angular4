@@ -1,0 +1,6 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+    <p  
+        [ngStyle]="{backgroundColor:getColor()}"
+        [ngClass]="{online:serverStatus==='online'}"
+        >Server is running with ID {{serverId}} and the status is {{getServerStatus()}} </p>    
+</div>
