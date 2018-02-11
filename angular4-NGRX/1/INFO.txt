@@ -1,0 +1,23 @@
+WHAT IS NGRX (REDUX)
+Lets use NGRX instead of services for state managment 
+Earlier state managment is done with EventEmitter,Subject from RXJS
+
+
+IS it no possible to handle async call in the NGRX, hence we are using still authService 
+--> use ngRX, where state is distributed between many componensts 
+--> dont use ngRX for maintaining the UI state in the HTML template like disabling the form or button 
+
+@ngrx/effects:
+--> This is component is used to deal with side effects of ngex/store, like to deal with async call operations or HTTP call 
+
+@ngrx/router-store 
+--> this component is used to manage the router state 
+
+@ngx/store-devtools
+--> to debug the state change of router's,applications's and UI's states in the applications
+
+
+
+
+
+

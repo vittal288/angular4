@@ -1,8 +1,0 @@
-Implement all these features : 
-1.Check if a token is present at application startup (check the localStorage manually or use the Firebase SDK to do so - just make sure that you somehow wait for the SDK to finish its initialization)
-2.Redirect the user if he want to access a protected route (right now, nothing happens) - inject the router and call this.router.navigate(...) to do so
-3.Rdirect the user on logout so that he's not able to stay on pages which are reserved for authenticated users - you can simply inject the router and call this.router.navigate(...) in the logout() method
-4. Inherit the HTTP class to send token in one shot for all services (like interceptor)
-5.Notification of all transcantions to the user like "User success logs in, error messages or any"
-6.Show the error to user for wrong password . or any error or validaiton error 
-7. Implement loading button using angular ladda 

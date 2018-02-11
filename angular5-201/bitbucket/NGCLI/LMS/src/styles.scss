@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*bootstrap theme*/
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* ng material theme */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* custom style */
+@import "theme/custom/scss/modules/style.scss";
+
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+* {
+    font-family: 'Quattrocento Sans', sans-serif;
+}

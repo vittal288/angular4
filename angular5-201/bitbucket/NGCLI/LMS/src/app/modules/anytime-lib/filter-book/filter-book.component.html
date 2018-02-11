@@ -1,0 +1,25 @@
+<div class="panel panel-info hidden-xs">
+  <div class="panel-heading">
+    <b>Popular Categories</b>
+  </div>
+  <div class="panel-body">
+    <mat-checkbox class="col-xs-12" (change)="onSelectCategory(category)" *ngFor="let category of categories">{{category}}</mat-checkbox>
+  </div>
+</div>
+
+<div class="panel-group hidden-lg hidden-md hidden-sm" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <b>Popular Categories</b>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">       
+          <mat-checkbox class="col-xs-12" *ngFor="let bookCateGory of categories">{{category}}</mat-checkbox>        
+      </div>
+    </div>
+  </div>
+</div>

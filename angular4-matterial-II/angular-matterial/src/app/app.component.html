@@ -1,0 +1,122 @@
+<h3>Check Box Button </h3>
+<hr>
+<md-checkbox #showDetails [value]="2" [checked]="isChecked" (change)="onChecked($event)">subscribes to news letter </md-checkbox>
+<div *ngIf="showDetails.checked"> {{isVisible}} Show Details </div>
+<!--__________________________________________________________________________ -->
+
+<h3>Radio Button</h3>
+<hr>
+<md-radio-group (change)="onRadioChange($event)">
+    <md-radio-button value="1">Male </md-radio-button>
+    <md-radio-button value="2" [checked]="isChecked">Female </md-radio-button>
+    <md-radio-button value="3" [disabled]="true">Others</md-radio-button>
+</md-radio-group>
+
+
+<!--__________________________________________________________________________ -->
+
+<h3>Select</h3>
+<hr>
+<md-select [(ngModel)]="food" (change)="onSelect($event)" placeholder="please select">
+    <md-option *ngFor="let food of foods" [value]="food.id">{{food.name}}</md-option>
+</md-select>
+
+<!--__________________________________________________________________________ -->
+
+<h3>Inputs</h3>
+<hr>
+<md-input-container>
+    <md-hint>Type a unique username</md-hint>
+    <input #username="ngModel" ngModel name="username" mdInput placeholder="username" required/>
+    <span mdSuffix>@domain.com</span>
+    <span mdPrefix>admin.</span>
+    <md-error *ngIf="username.invalid && username.errors.required">username is required</md-error>
+</md-input-container>
+
+<form class="example-form">
+    <md-form-field>
+        <textarea mdInput rows="2" mdTextareaAutosize></textarea>
+    </md-form-field>
+</form>
+
+
+<!--__________________________________________________________________________ -->
+
+<h3>Date Picker</h3>
+<hr>
+<md-form-field>
+    <input mdInput (focus)="picker.open()" [min]="minDate" [max]="maxDate" [mdDatepicker]="picker" placeholder="Choose a date">
+    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+    <md-datepicker #picker touchUi="true"></md-datepicker>
+</md-form-field>
+
+<h3>ICONS</h3>
+<md-icon>settings_voice</md-icon>
+
+<h3>Buttons</h3>
+<hr>
+<button md-button>Button 1</button>
+<button md-raised-button color="primary">Primary</button>
+<button md-raised-button color="accent">Accent</button>
+<button md-raised-button color="warn">Warn</button>
+<button color="primary" md-raised-button md-fab><md-icon>add</md-icon></button>
+
+
+<h3>Chips</h3>
+<hr>
+<md-chip-list>
+    <md-chip *ngFor="let category of categories" (click)="selectCategory(category)" [selected]="category.selected">{{category.name}}
+    </md-chip>
+</md-chip-list>
+
+<h3>Progress Bars</h3>
+<hr>
+<md-progress-spinner mode="determinate" [value]="progress"></md-progress-spinner>
+<md-progress-spinner mode="indeterminate" *ngIf="isLoading"></md-progress-spinner>
+
+
+<h3>TOOL TIP</h3>
+<hr>
+<span mdTooltip="Show some tootip" mdTooltipPosition="above">Show me tooltip</span>
+
+<h3>TABS</h3>
+<hr>
+<md-tab-group>
+    <md-tab label="Shipping">
+        Shipping Tab contents
+    </md-tab>
+    <md-tab label="Billing">
+        Biiling Tab content
+    </md-tab>
+</md-tab-group>
+
+
+<h3>Modal Dialogue</h3>
+<hr>
+<button md-raised-button (click)="openDialogue()">Open Dialogue</button>
+
+<h3>SASS THEME</h3>
+<hr>
+<button md-raised-button color="primary">Customed Theme PRIMARY </button>
+<button md-raised-button color="accent">Customed Theme ACCENT</button>
+<button md-raised-button color="warn">Customed Theme WARN</button>
+
+<h3>TYPOGRAPHY</h3>
+<hr/>
+
+<h1>
+    Heading 1
+</h1>
+<p>
+    s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+    since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+    survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
+    was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Why do we use it? It is a long established
+    fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using
+    Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content
+    here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum
+    as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
+    versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+</p>

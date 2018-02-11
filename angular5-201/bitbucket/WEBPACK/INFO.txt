@@ -1,0 +1,8 @@
+Bitbukcet info
+Cloning into 'angular4-course-material2'...
+The authenticity of host 'bitbucket.org (104.192.143.2)' can't be established.
+RSA key fingerprint is SHA256:zzXQOXSRBEiUtuE8AikJYKwbHaxvSc0ojez9YXaGp1A.
+
+
+SCSS/SAAS Design Patterns:
+https://medium.com/@marcmintel/how-to-use-the-module-pattern-in-your-scss-sass-stylesheets-89fe38a6e1f3

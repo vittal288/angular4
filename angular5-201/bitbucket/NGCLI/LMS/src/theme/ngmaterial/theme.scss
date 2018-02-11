@@ -1,0 +1,53 @@
+// $color:blue;
+
+// h1{
+//     color: $color
+// }
+// h2{
+//     color: $color
+// }
+
+// @mixin  soft-border($border-radius){
+
+//     border:1px solid #ccc;
+//     border-radius: $border-radius;
+//     padding: 10px;
+
+// }
+
+// .box{
+//     @include soft-border(5px);
+// }
+// .modern-box{
+//     @include soft-border(10px);
+// }
+
+// //@@@@ Angular matterial custom theming 
+// @import "~@angular/material/_theming";
+
+// @include mat-core();
+
+// $app-primary: mat-palette($mat-blue,900);
+// $app-accent: mat-palette($mat-blue-grey,600);
+// $app-warn: mat-palette($mat-red,900);
+
+
+// //mixin to generate light theme
+// //$app-theme:mat-light-theme($app-primary,$app-accent,$app-warn);
+// $app-theme:mat-dark-theme($app-primary,$app-accent,$app-warn);
+
+// //mixin to  generate custom theme and inject into the app 
+// @include angular-material-theme($app-theme);
+
+// //@@@@ define custom typography , function 
+// $app-typgraphy:mat-typography-config(
+//     $font-family:'"Economica","Helvetica Neue", sans-serif',
+//     $headline: mat-typography-level(40px, 32px, 400)
+// );
+
+// //mixing to generate typography and inject into the app 
+// @include angular-material-typography($app-typgraphy);
+// //@include mat-checkbox-typography($app-typgraphy)
+
+
+

@@ -1,0 +1,11 @@
+<favorite [isFavorite]="posts.isFavorite" (change)="onFavoriteChanged($event)">
+  <!-- this content will replace in ng-conent tag which has .heading as selector-->
+  <!-- <div class="heading"><h1> Heading...</h1></div> -->
+  <ng-container class="heading"><h1> Heading...</h1></ng-container>
+  <!-- this content will replace in ng-conent tag which has .body as selector-->
+  <ng-container class="body">
+      <p>
+        Some content
+      </p>
+  </ng-container>
+</favorite>

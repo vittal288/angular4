@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <h2>Login / Registration form</h2>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="form-body">
+        <ul class="nav nav-tabs final-login">
+          <li class="active">
+            <a data-toggle="tab" href="#sectionA">Sign In</a>
+          </li>
+          <li><a data-toggle="tab" href="#sectionB">Register</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="sectionA" class="tab-pane fade in active">
+            <div class="innter-form">            
+              <form class="sa-innate-form" [formGroup]="loginForm" (ngSubmit)="onLoginWithEmailAndPassword()">                 
+                  <label>Email Address</label>                  
+                  <input formControlName="email" type="text" id="email"   name="email">                  
+                  <label>Password</label>                  
+                  <input formControlName="password" type="password" id="password"  name="password">                  
+                  <button  type="submit" [disabled]="!loginForm.valid" class="btn btn-danger">Signin</button>                  
+                </form>
+            </div>
+            <div class="social-login">
+              <p>- - - - - - - - - - - - - Sign In With - - - - - - - - - - - - - </p>
+              <ul>
+                <li>
+                  <a>
+                    <i class="fa fa-facebook"></i> Facebook</a>
+                </li>
+                <li>
+                  <a (click)="onLoginWithGoogle()"><i class="fa fa-google-plus"></i> Google</a>
+                </li>
+                <li>
+                  <a>
+                    <i class="fa fa-twitter"></i> Twitter</a>
+                </li>
+              </ul>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div id="sectionB" class="tab-pane fade">
+                  <div class="innter-form">                  
+                    <form class="sa-innate-form" [formGroup]="registerForm" (ngSubmit)="onCreateAccountWithEmailAndPassword()">                 
+                        <label>Email Address</label>                  
+                        <input formControlName="email" type="text" id="email"   name="email">   
+                        <span *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched">
+                            <span class="help-block" *ngIf="registerForm.get('email').errors['email']">Email is not valid</span>
+                            <span class="help-block" *ngIf="registerForm.get('email').errors['required']">Field is required</span>
+                          </span>                 
+                        <label>Password</label>                  
+                        <input formControlName="password" type="password" id="password"  name="password">
+                        <span *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched">
+                            <span class="help-block" *ngIf="password.errors?.minlength">It should be minmum 3 charectors</span>                            
+                            <span class="help-block" *ngIf="registerForm.get('password').errors['required']">Field is required</span>
+                          </span>  
+                        <button  type="submit" [disabled]="!registerForm.valid" class="btn btn-danger">Register</button>
+                        <p>Click Register button to create an account with ATL</p>
+                      </form>
+
+                  </div>
+                  <hr>
+                  <div *ngIf="hideMessage" [ngClass]="loginFlag ==='Error'? 'alert alert-danger':'alert alert-success'">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>{{loginMessage}}</strong> {{authMessages}}
+                  </div>
+                  <div class="social-login">
+                  <p>- - - - - - - - - - - - - Register With - - - - - - - - - - - - - </p>
+            <ul>
+                  <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+                  <li><a (click)="onLoginWithGoogle()"><i class="fa fa-google-plus"></i> Google+</a></li>
+                  <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+                  </ul>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

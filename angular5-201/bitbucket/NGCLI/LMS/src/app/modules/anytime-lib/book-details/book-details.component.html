@@ -1,0 +1,40 @@
+<div *ngIf="book">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="jumbotron">
+        <img class="img-responsive" src="{{book.volumeInfo.imageLinks.thumbnail}}" alt="{{book.volumeInfo.title}}">
+        <h2>Title: {{book.volumeInfo.title}}</h2>
+        <h4> Author:{{book.volumeInfo.authors[0]}}</h4>
+        <p>Description :{{book.volumeInfo.description}}</p>
+        <p>ISBN :
+          <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}} </strong>
+        </p>
+        <div>
+          List Price:
+          <span class="label label-danger">{{book.saleInfo.listPrice.amount}} {{book.saleInfo.listPrice.currencyCode}}</span>
+        </div>
+        <div>
+          Retail Price:
+          <span class="label label-danger">{{book.saleInfo.retailPrice.amount}} {{book.saleInfo.retailPrice.currencyCode}}</span>
+        </div>
+        <a class="btn-sm btn-info" role="button" href="{{book.saleInfo.buyLink}}" target="_blank">Buy</a>
+        <div class="col-md-12 col-sm-12 col-xs-12 ">
+          <div class="pull-right">
+            <button type="button" class="btn btn-info" (click)="onAddToShelf(book.volumeInfo.industryIdentifiers[0].identifier)">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add To Shelf
+            </button>
+            <button type="button" class="btn btn-danger">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Remove From Shelf
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <app-like-and-rate-book [bookVolume]="book.volumeInfo"></app-like-and-rate-book>
+    </div>
+  </div>
+</div>

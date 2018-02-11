@@ -1,0 +1,29 @@
+<div class="row equal-height">
+  <div class="col-xs-6 col-md-4 col-xs-12" *ngFor="let book of bookList">
+    <div class="thumbnail">
+      <img src="{{book.volumeInfo.imageLinks.smallThumbnail}}" class="img-fullsize">
+      <div>
+        <b>Title : </b>
+        <strong>{{book.volumeInfo.title}}</strong>
+      </div>
+      <div>
+        <b>Author:</b>
+        <strong>{{book.volumeInfo.authors[0]}} </strong>
+      </div>
+      <div>
+        <b>ISBN:</b>
+        <strong>{{book.volumeInfo.industryIdentifiers[0].identifier}} </strong>
+      </div>
+      <div>
+          <b>Category:</b>
+          <span class="label label-danger">{{book.volumeInfo.categories[0]}}</span>
+        </div>
+      <div class="caption">
+        <b>Description:</b>
+        <p>{{book.volumeInfo.description | restrictStringLength:'100' }}</p>
+        <button class="btn-sm btn-info" role="button" (click)="onReadMore(book)">Read more</button>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-xs-6.col-md-3 -->
+</div>

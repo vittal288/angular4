@@ -1,0 +1,21 @@
+<form #f="ngForm" class="userForm">
+  <div>
+    <mat-form-field class="searchItemAutoComplete col-sm-offset-4">
+      <input matInput 
+             placeholder="search by title or author"
+             [matAutocomplete]="searchItemAuto"
+             name="searchItem" 
+             #searchItem="ngModel" 
+             [(ngModel)]="selectedBook" 
+             (ngModelChange)="bookNamesAndAuthors = filterSearchItems(selectedBook)">
+    </mat-form-field>
+
+    <mat-autocomplete #searchItemAuto="matAutocomplete">
+      <mat-option *ngFor="let bookNamesAndAuthor of bookNamesAndAuthors"      
+        (onSelectionChange)="onSelectSearchItem($event, bookNamesAndAuthor)"
+        [value]="bookNamesAndAuthor.name">
+        <span>{{ bookNamesAndAuthor.name }}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </div>  
+</form>

@@ -1,0 +1,32 @@
+UTC configure with webpack
+
+https://semaphoreci.com/community/tutorials/setting-up-angular-2-with-webpack
+
+https://medium.com/@lacolaco/setting-up-angular-2-testing-environment-with-karma-and-webpack-e9b833befd99
+
+https://angular-2-training-book.rangle.io/handout/testing/intro-to-tdd/setup/karma-config.html
+
+https://github.com/gonzofish/semaphore-ng2-webpack
+
+
+
+https://github.com/aconfee/MEANTemplateV3/blob/master/config/webpack.common.js
+
+ONLINE BOOK WEBSITE :
+
+https://www.indiabookstore.net/
+https://www.infibeam.com/Books/
+http://www.blurb.com/
+
+UX sites:
+http://preview.themeforest.net/item/libraria-online-library-html-template/full_screen_preview/19478685?ref=freshdesignweb&clickthrough_id=1124606029&redirect_back=true
+
+
+TEMPLATES:
+https://bootsnipp.com/snippets/featured/simple-navbar-search
+https://bootsnipp.com/snippets/featured/fancy-navbar-login-sign-in-form
+http://wrapbootstrap.com/preview/WB0R5L90S : INSPINIA 
+
+
+
+
