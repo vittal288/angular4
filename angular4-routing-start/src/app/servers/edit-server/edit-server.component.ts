@@ -25,7 +25,7 @@ export class EditServerComponent implements OnInit,CanComponentDeactivate {
     //
    }
 
-  ngOnInit() {    
+  ngOnInit() {
     //@@@ 1--> retrieve Query Params and Fragments from URL from snapshot
     // console.log('Query Params',this.route.snapshot.queryParams);
     // console.log('Fragments',this.route.snapshot.fragment);
@@ -36,18 +36,18 @@ export class EditServerComponent implements OnInit,CanComponentDeactivate {
     });
     // this.route.fragment.subscribe((frgmnParms)=>{
     //     console.log('Fr Params',frgmnParms);
-    // });   
-    const id = this.route.snapshot.params['id'];   
+    // });
+    const id = this.route.snapshot.params['id'];
     this.server = this.serversService.getServer(+id);
     this.serverName = this.server.name;
     this.serverStatus = this.server.status;
     //within the same route , if ids are changed then those will capture in subscribe method
-    this.route.params.subscribe((params:Params)=>{           
+    this.route.params.subscribe((params:Params)=>{
         this.server = this.serversService.getServer(+params.id);
         this.serverName = this.server.name;
         this.serverStatus = this.server.status;
     })
-   
+
   }
 
   onUpdateServer() {
