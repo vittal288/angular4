@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/timer';
-import { MdDialog } from '@angular/material';
+import {  MatDialog } from '@angular/material';
 
 import { EditCourseComponent } from './edit-course/edit-course.component';
 
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   isLoading: boolean;
 
 
-  constructor(private mdDialog: MdDialog) {
+  constructor(private matDialog: MatDialog) {
 
   }
   ngOnInit() {
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
   }
 
   openDialogue() {
-    this.mdDialog.open(EditCourseComponent, {
+    this.matDialog.open(EditCourseComponent, {
       data: { courseId: 1 }
     })
       .afterClosed()

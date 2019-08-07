@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
       'hobbies': new FormArray([])
     });
 
-    //@@@ Track the each value change of the form 
+    //@@@ Track the each value change of the form
     // this.signupForm.valueChanges.subscribe((value)=>{
     //     console.log(value);
     // })
@@ -30,10 +30,10 @@ export class AppComponent implements OnInit {
     //@@@ track the each form field status
     this.signupForm.statusChanges.subscribe((status) => {
       console.log(status);
-    })
+    });
 
 
-    //SET VALUE and PATCH VALUE 
+    //SET VALUE and PATCH VALUE
     // this.signupForm.setValue({
     //   userData:{
     //     'username':'vittal',
@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
       userData: {
         'email': 'test@test.com'
       }
-    })
+    });
   }
 
   onSubmit() {
@@ -72,7 +72,7 @@ export class AppComponent implements OnInit {
     return null;
   }
 
-  //custom asynch validators 
+  //custom asynch validators
   forBiddenEmails(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise<any>((resolve, reject) => {
       setTimeout(() => {

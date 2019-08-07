@@ -1,36 +1,47 @@
 import { NgModule } from '@angular/core';
+// import {
+//   MaterialModule,
+//   matCheckboxModule,
+//   matRadioModule,
+//   matSelectModule,
+//   matDatepickerModule,
+//   matNativeDateModule,
+//   matIconModule,
+//   matButtonModule,
+//   matChipsModule,
+//   matProgressSpinnerModule,
+//   matTooltipModule,
+//   matTabsModule,
+//   matDialogModule,
+//   matInputModule, MatInputModule} from '@angular/material'
+
+
 import {
-  MaterialModule,
-  MdCheckboxModule,
-  MdRadioModule,
-  MdSelectModule,
-  MdDatepickerModule,
-  MdNativeDateModule,
-  MdIconModule,
-  MdButtonModule,
-  MdChipsModule,
-  MdProgressSpinnerModule,
-  MdTooltipModule,
-  MdTabsModule,
-  MdDialogModule,
-  MdInputModule} from '@angular/material'
+  MatCheckboxModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
+  MatNativeDateModule, MatIconModule, MatButtonModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule,
+  MatInputModule, MatDialogModule, MatTabsModule
+} from '@angular/material';
 
 @NgModule({
 
-  exports:[
-    MaterialModule,  
-    MdCheckboxModule,
-    MdRadioModule,
-    MdInputModule,
-    MdIconModule,   
-    MdDatepickerModule,
-    MdNativeDateModule,
-    MdButtonModule,
-    MdChipsModule,
-    MdProgressSpinnerModule,
-    MdTabsModule,
-    MdDialogModule,
-    MdTooltipModule
+  exports: [
+    // MaterialModule,
+    // matCheckboxModule,
+    // matRadioModule,
+    // matInputModule,
+    // matIconModule,
+    // matDatepickerModule,
+    // matNativeDateModule,
+    // matButtonModule,
+    // matChipsModule,
+    // matProgressSpinnerModule,
+    // matTabsModule,
+    // matDialogModule,
+    // matTooltipModule
+
+    MatCheckboxModule, MatRadioModule, MatSelectModule, MatDatepickerModule,
+    MatNativeDateModule, MatIconModule, MatButtonModule, MatChipsModule, MatProgressBarModule, MatProgressSpinnerModule,
+    MatInputModule, MatDialogModule, MatTabsModule
   ]
 })
-export class MDComponentsModule { }
+export class MatComponentsModule { }

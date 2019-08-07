@@ -1,42 +1,42 @@
 <h3>Check Box Button </h3>
 <hr>
-<md-checkbox #showDetails [value]="2" [checked]="isChecked" (change)="onChecked($event)">subscribes to news letter </md-checkbox>
+<mat-checkbox #showDetails [value]="2" [checked]="isChecked" (change)="onChecked($event)">subscribes to news letter </mat-checkbox>
 <div *ngIf="showDetails.checked"> {{isVisible}} Show Details </div>
 <!--__________________________________________________________________________ -->
 
 <h3>Radio Button</h3>
 <hr>
-<md-radio-group (change)="onRadioChange($event)">
-    <md-radio-button value="1">Male </md-radio-button>
-    <md-radio-button value="2" [checked]="isChecked">Female </md-radio-button>
-    <md-radio-button value="3" [disabled]="true">Others</md-radio-button>
-</md-radio-group>
+<mat-radio-group (change)="onRadioChange($event)">
+    <mat-radio-button value="1">Male </mat-radio-button>
+    <mat-radio-button value="2" [checked]="isChecked">Female </mat-radio-button>
+    <mat-radio-button value="3" [disabled]="true">Others</mat-radio-button>
+</mat-radio-group>
 
 
 <!--__________________________________________________________________________ -->
 
 <h3>Select</h3>
 <hr>
-<md-select [(ngModel)]="food" (change)="onSelect($event)" placeholder="please select">
-    <md-option *ngFor="let food of foods" [value]="food.id">{{food.name}}</md-option>
-</md-select>
+<mat-select [(ngModel)]="food" (change)="onSelect($event)" placeholder="please select">
+    <mat-option *ngFor="let food of foods" [value]="food.id">{{food.name}}</mat-option>
+</mat-select>
 
 <!--__________________________________________________________________________ -->
 
 <h3>Inputs</h3>
 <hr>
-<md-input-container>
-    <md-hint>Type a unique username</md-hint>
-    <input #username="ngModel" ngModel name="username" mdInput placeholder="username" required/>
-    <span mdSuffix>@domain.com</span>
-    <span mdPrefix>admin.</span>
-    <md-error *ngIf="username.invalid && username.errors.required">username is required</md-error>
-</md-input-container>
+<mat-input-container>
+    <mat-hint>Type a unique username</mat-hint>
+    <input #username="ngModel" ngModel name="username" matInput placeholder="username" required/>
+    <span matSuffix>@domain.com</span>
+    <span matPrefix>admin.</span>
+    <mat-error *ngIf="username.invalid && username.errors.required">username is required</mat-error>
+</mat-input-container>
 
 <form class="example-form">
-    <md-form-field>
-        <textarea mdInput rows="2" mdTextareaAutosize></textarea>
-    </md-form-field>
+    <mat-form-field>
+        <textarea matInput rows="2" matTextareaAutosize></textarea>
+    </mat-form-field>
 </form>
 
 
@@ -44,62 +44,62 @@
 
 <h3>Date Picker</h3>
 <hr>
-<md-form-field>
-    <input mdInput (focus)="picker.open()" [min]="minDate" [max]="maxDate" [mdDatepicker]="picker" placeholder="Choose a date">
-    <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-    <md-datepicker #picker touchUi="true"></md-datepicker>
-</md-form-field>
+<mat-form-field>
+    <input matInput (focus)="picker.open()" [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker touchUi="true"></mat-datepicker>
+</mat-form-field>
 
 <h3>ICONS</h3>
-<md-icon>settings_voice</md-icon>
+<mat-icon>settings_voice</mat-icon>
 
 <h3>Buttons</h3>
 <hr>
-<button md-button>Button 1</button>
-<button md-raised-button color="primary">Primary</button>
-<button md-raised-button color="accent">Accent</button>
-<button md-raised-button color="warn">Warn</button>
-<button color="primary" md-raised-button md-fab><md-icon>add</md-icon></button>
+<button mat-button>Button 1</button>
+<button mat-raised-button color="primary">Primary</button>
+<button mat-raised-button color="accent">Accent</button>
+<button mat-raised-button color="warn">Warn</button>
+<button color="primary" mat-raised-button mat-fab><mat-icon>add</mat-icon></button>
 
 
 <h3>Chips</h3>
 <hr>
-<md-chip-list>
-    <md-chip *ngFor="let category of categories" (click)="selectCategory(category)" [selected]="category.selected">{{category.name}}
-    </md-chip>
-</md-chip-list>
+<mat-chip-list>
+    <mat-chip *ngFor="let category of categories" (click)="selectCategory(category)" [selected]="category.selected">{{category.name}}
+    </mat-chip>
+</mat-chip-list>
 
 <h3>Progress Bars</h3>
 <hr>
-<md-progress-spinner mode="determinate" [value]="progress"></md-progress-spinner>
-<md-progress-spinner mode="indeterminate" *ngIf="isLoading"></md-progress-spinner>
+<mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+<mat-progress-spinner mode="indeterminate" *ngIf="isLoading"></mat-progress-spinner>
 
 
 <h3>TOOL TIP</h3>
 <hr>
-<span mdTooltip="Show some tootip" mdTooltipPosition="above">Show me tooltip</span>
+<span matTooltip="Show some tootip" matTooltipPosition="above">Show me tooltip</span>
 
 <h3>TABS</h3>
 <hr>
-<md-tab-group>
-    <md-tab label="Shipping">
+<mat-tab-group>
+    <mat-tab label="Shipping">
         Shipping Tab contents
-    </md-tab>
-    <md-tab label="Billing">
+    </mat-tab>
+    <mat-tab label="Billing">
         Biiling Tab content
-    </md-tab>
-</md-tab-group>
+    </mat-tab>
+</mat-tab-group>
 
 
 <h3>Modal Dialogue</h3>
 <hr>
-<button md-raised-button (click)="openDialogue()">Open Dialogue</button>
+<button mat-raised-button (click)="openDialogue()">Open Dialogue</button>
 
 <h3>SASS THEME</h3>
 <hr>
-<button md-raised-button color="primary">Customed Theme PRIMARY </button>
-<button md-raised-button color="accent">Customed Theme ACCENT</button>
-<button md-raised-button color="warn">Customed Theme WARN</button>
+<button mat-raised-button color="primary">Customed Theme PRIMARY </button>
+<button mat-raised-button color="accent">Customed Theme ACCENT</button>
+<button mat-raised-button color="warn">Customed Theme WARN</button>
 
 <h3>TYPOGRAPHY</h3>
 <hr/>
@@ -120,3 +120,6 @@
     versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
 </p>
+<app-table>
+
+</app-table>

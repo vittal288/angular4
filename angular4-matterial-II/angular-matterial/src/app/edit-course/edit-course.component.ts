@@ -1,6 +1,6 @@
 import { Component, OnInit, InjectionToken,Inject} from '@angular/core';
 //import {EditCourseService} from './edit-course.service';
-import {MD_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA} from '@angular/material';
 
 //export const DIALOG_DATA = new InjectionToken('DIALOG_DATA');
 
@@ -13,8 +13,8 @@ import {MD_DIALOG_DATA} from '@angular/material';
 
 export class EditCourseComponent implements OnInit {
 
-  //MD_DIALOG_DATA: custom dependency injection token
-  constructor(@Inject(MD_DIALOG_DATA) data:any) {
+  //mat_DIALOG_DATA: custom dependency injection token
+  constructor(@Inject(MAT_DIALOG_DATA) data:any) {
     console.log("DATA",data);
    }
 

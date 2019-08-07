@@ -8,15 +8,17 @@ import { AppComponent } from './app.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
 import { EditCourseService } from './edit-course/edit-course.service';
 
-import {MDComponentsModule} from './modules/md.components.module';
+import {MatComponentsModule} from './modules/md.components.module';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EditCourseComponent
+    EditCourseComponent,
+    TableComponent
   ],
 
-  //the components which we add/reffered dynamically 
+  //the components which we add/reffered dynamically
   entryComponents:[
     EditCourseComponent
   ],
@@ -24,12 +26,12 @@ import {MDComponentsModule} from './modules/md.components.module';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    MDComponentsModule  
+    MatComponentsModule
   ],
   providers: [
     EditCourseService,
-    //this is to inject using provider oject 
-    {provide:EditCourseService,useClass:EditCourseService},    
+    //this is to inject using provider oject
+    {provide:EditCourseService,useClass:EditCourseService},
   ],
   bootstrap: [AppComponent]
 })
