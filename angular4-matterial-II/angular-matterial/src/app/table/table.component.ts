@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-table',
@@ -6,39 +7,80 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  checkBoxes = [
-    {
-      col: 'Col1',
-      name: 'Rule 1'
-    },
-    {
-      col: 'Col2',
-      name: 'Rule 2'
-    },
-    {
-      col: 'Col3',
-      name: 'Rule 3'
-    },
-    {
-      col: 'Col4',
-      name: 'Rule 4'
-    },
-    {
-      col: 'Col5',
-      name: 'Rule 5'
-    }
-  ]
+  @ViewChild('f') userForm: NgForm;
+  twoDmodel = [];
+  colDefs = [];
+
   constructor() { }
 
   ngOnInit() {
+    this.twoDmodel = this.generate2DModel(4, 4);
   }
 
-  onChecked(){
+  generate2DModel(rows, cols) {
+    const retArr = [];
+    for (let i = 0; i < cols; i++) {
+      retArr.push(new Array(rows).fill(0));
+    }
 
+    for (let i = 0; i < retArr.length; i++) {
+      const colCheckBox = {
+        position: i,
+        name: 'Rule-' + i,
+        value: false
+      };
+      this.colDefs.push(colCheckBox);
+
+      for (let j = 0; j < retArr[i].length; j++) {
+        retArr[i][j] = {
+          position: i + '-' + j,
+          name: 'checkbox',
+          value: false
+        }
+      }
+    }
+    return retArr;
   }
 
-  onCheckedSelectAll(){
 
+  onSubmit() {
+    console.log(this.userForm.value);
+  }
+
+  onCheckBoxClick(row, col) {
+    console.log('ITEM', this.twoDmodel[row][col]);
+  }
+
+  selectRow(rowIndex) {
+    console.log('rowIndex', rowIndex);
+    for (let i = 0; i < this.twoDmodel.length; i++) {
+      if (rowIndex === i) {
+        for (let j = 0; j < this.twoDmodel[i].length; j++) {
+          const currentCheckBox = this.twoDmodel[i][j];
+          // if (!currentCheckBox['value']) {
+          //   currentCheckBox['value'] = !currentCheckBox['value'];
+          // }
+          currentCheckBox['value'] = !currentCheckBox['value'];
+          this.twoDmodel[i][j] = currentCheckBox;
+        }
+      }
+    }
+  }
+
+  selectCol(colIndex) {
+    console.log('COL INDEX', colIndex);
+    for (let i = 0; i < this.twoDmodel.length; i++) {
+      for (let j = 0; j < this.twoDmodel[i].length; j++) {
+        if (colIndex === j) {
+          const currentCheckBox = this.twoDmodel[i][j];
+          // if (!currentCheckBox['value']) {
+          //   currentCheckBox['value'] = !currentCheckBox['value'];
+          // }
+          currentCheckBox['value'] = !currentCheckBox['value'];
+          this.twoDmodel[i][j] = currentCheckBox;
+        }
+      }
+    }
   }
 
 }
