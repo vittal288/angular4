@@ -1,21 +1,13 @@
 <div class="row">
-  <div class="col-md-2" *ngFor="let col of colDefs">
-      <mat-checkbox [(ngModel)]="col['value']" (change)=selectCol(col.position)>{{col.name}}</mat-checkbox>
-  </div>
-
-  <div class="col-md-2">
-    <div>
-      <h3>Select All</h3>
-    </div>
+  <div class="col-md-2" *ngFor="let checkBox of colDefs">
+    <mat-checkbox [(ngModel)]="checkBox['value']" (change)=onCheckBoxClick(checkBox)>{{checkBox.name}}</mat-checkbox>
   </div>
 </div>
-<div class="row" *ngFor="let checkBoxes of twoDmodel;let rowindex=index">
-  <div class="col-md-2" *ngFor="let checkbox of checkBoxes; let colIndex = index">
-    <mat-checkbox [(ngModel)]="checkbox['value']" (change)=onCheckBoxClick(rowindex,colIndex)>{{rowindex}}--{{colIndex}}
-    </mat-checkbox>
-  </div>
 
-  <div class="col-md-2">
-    <mat-checkbox (change)="selectRow(rowindex)">Select Row</mat-checkbox>
+<div class="row" *ngFor="let checkBoxes of twoDmodel;let rowIndex=index">
+  <div class="col-md-2" *ngFor="let checkbox of checkBoxes; let colIndex = index">
+    <mat-checkbox [(ngModel)]="checkbox['value']" (change)=onCheckBoxClick(checkbox,rowIndex,colIndex)>
+      {{rowIndex}}--{{colIndex}}
+    </mat-checkbox>
   </div>
 </div>
