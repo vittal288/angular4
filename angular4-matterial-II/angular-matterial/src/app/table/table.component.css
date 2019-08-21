@@ -1,0 +1,20 @@
+
+
+.btn-row-adjustment{
+  height: 50px;
+}
+
+
+.checkBox-section{
+  margin-top: 14px;
+}
+
+.row-adjustment{
+  /* border:1px solid red; */
+  height: 50px;
+}
+
+.each-check-box{
+  display: block;
+  margin-top: 5px;
+}

@@ -1,13 +1,33 @@
 <div class="row">
-  <div class="col-md-2" *ngFor="let checkBox of colDefs">
-    <mat-checkbox [(ngModel)]="checkBox['value']" (change)=onCheckBoxClick(checkBox)>{{checkBox.name}}</mat-checkbox>
+  <!--BUTTON SECTION -->
+  <div class="col-md-1">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>SOME HEADER</h3>
+      </div>
+    </div>
+    <div class="row btn-row-adjustment" *ngFor="let btn of btnArr">
+      <div class="col-md-12">
+        <button mat-raised-button color="primary">{{btn.name}}</button>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="row" *ngFor="let checkBoxes of twoDmodel;let rowIndex=index">
-  <div class="col-md-2" *ngFor="let checkbox of checkBoxes; let colIndex = index">
-    <mat-checkbox [(ngModel)]="checkbox['value']" (change)=onCheckBoxClick(checkbox,rowIndex,colIndex)>
-      {{rowIndex}}--{{colIndex}}
-    </mat-checkbox>
+  <!--CHECK BOX SECTION -->
+  <div class="col-md-11 checkBox-section">
+    <div class="row">
+      <div class="col-md-1" *ngFor="let checkBox of colDefs">
+        <mat-checkbox [(ngModel)]="checkBox['value']" (change)=onCheckBoxClick(checkBox)>{{checkBox.name}}
+        </mat-checkbox>
+      </div>
+    </div>
+
+    <div class="row row-adjustment" *ngFor="let checkBoxes of twoDmodel;let rowIndex=index">
+      <div class="col-md-1" *ngFor="let checkbox of checkBoxes; let colIndex = index">
+        <mat-checkbox class="each-check-box" [(ngModel)]="checkbox['value']" (change)=onCheckBoxClick(checkbox,rowIndex,colIndex)>
+          {{rowIndex}}--{{colIndex}}
+        </mat-checkbox>
+      </div>
+    </div>
   </div>
 </div>
